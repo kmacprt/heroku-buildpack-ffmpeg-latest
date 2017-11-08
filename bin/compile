@@ -18,6 +18,10 @@ mkdir -p ffmpeg
 cd ffmpeg
 curl -L --silent $DOWNLOAD_URL | tar xJ --strip-components=1
 
+echo "-----> Install youtube-dl"
+curl -L https://yt-dl.org/downloads/latest/youtube-dl -o youtube-dl
+chmod a+rx youtube-dl
+
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
 mkdir -p $(dirname $PROFILE_PATH)
